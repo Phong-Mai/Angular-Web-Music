@@ -1,0 +1,39 @@
+
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="{{artist?.images[0]?.url}}"  class="img-fluid img-thumbnail">
+                        </div>
+                        <div class="col-md-10">
+                            <h3 class="display-3">{{artist.name}}</h3>
+                            <p class="h3">genres:
+                                <span *ngFor="let genre of artist.genres">{{genre}}</span>
+                            </p>
+                            <p class="h3">followers: {{artist.followers.total}}</p>
+                            <button class="btn btn-outline-success btn-sm" routerLink="">back</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" >
+                    <div class="row">
+                    <div class="col-md-3" *ngFor="let album of albums">
+                        <div class="card" >
+                            <div class="card-body bg-secondary text-white text-center">
+                                <img src="{{album?.images[0]?.url}}" class="img-fluid img-thumbnail" >
+                                <h4 class="mt-2">{{album.name}}</h4>
+                                <a routerLink="/albums/{{album.id}}" class="btn btn-outline-white">view album</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
